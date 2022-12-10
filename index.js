@@ -1,23 +1,9 @@
-function downloading(url,cb)
-{
-    console.log('กำลังโหลด '+ url)
-    setTimeout(() => {
-        cb("Downloaded " + url)
-
-    }, 5000);
-}
-// function displayResult(myResult)
-// {
-//     console.log(myResult)
-// }
-
-downloading("File1",function(myResult){
-    console.log(myResult)
-    downloading("File2",function(myResult){
-        console.log(myResult)
-        downloading("File3",function(myResult){
-            console.log("Hello World");
-            console.log(myResult)
-        })
-    })
+const http = require('http');
+const server = http.createServer(function(req, res) {
+   res.write('<p style="color:gold;"> ');
+   res.write (`Hello from NODE SERVERdddddd</p>`);
+   res.end();
 })
+server.listen(7000,()=>{
+   console.log("Start server in port 7000");
+});
